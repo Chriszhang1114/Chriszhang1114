@@ -1,0 +1,144 @@
+*{
+    margin:0;
+    padding:0 2px;
+}
+body{
+    position: relative;
+}
+.headTitle{
+    text-align: center;
+    font-weight: 600;
+    height:40px;
+    line-height: 40px;
+    font-size: 18px;
+}
+.text p, .left, .right{
+    font-size: 12px;
+    line-height: 16px;
+}
+.list{
+    position: relative;
+}
+.left{
+    position: absolute;
+    left: 25px;
+}
+.normal-left{
+    left:5px;
+}
+.normal-left-15{
+    left:15px;
+}
+.right{
+    margin-left: 40px;
+}
+.normal-mr{
+    margin-left: 25px;
+}
+
+.mr-tp15{
+    margin-top: 15px;
+}
+.mar-tp10{
+    margin-top: 10px;
+}
+.row{
+    width: 100%; 
+    height: 40px; 
+    margin: 0; 
+    padding: 0;
+    display: table-row;
+
+}
+.bgrow{
+    background: #F7F7FA;
+}
+.col{
+    font-size: 12px; 
+    height: 40px; 
+    list-style-type: none;
+    margin: 0; 
+    padding: 0 5px; 
+    border: 1px solid #D9D9D6; 
+    box-sizing: border-box;
+    display: table-cell; 
+    vertical-align: middle;
+}
+.border-tp{
+    border-top: 0;
+}
+.border-lf{
+    border-left: 0;
+}
+.border-rt{
+    border-right: 0;
+}
+.border-bt{
+    border-bottom: 0;
+}
+.color-tp{
+    color: #9a99a2;
+}
+.color-ct{
+    color: #232326;
+}
+.width-20{
+    width:20%;
+}
+.width-60{
+    width:60%;
+}
+.mar-left10{
+    margin-left: 20px;
+}
+.mar-bt15{
+    margin-bottom: 20px;
+}
+#modal{
+    position: absolute;
+    top: 0;
+    left:-2px;
+    width:100%;
+    height:100%;
+    background: rgba(0, 0, 0, .6);
+    /* opacity: 0.6; */
+    /* color: #fff; */
+    display:none;
+    
+}
+.modalContext{
+    position: fixed;
+    bottom: 0;
+    left:-2px;
+    width:100%;
+    height:310px;
+    background: #F8F8FF;
+    /* opacity: 0.9; */
+    /* color: #fff; */
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100px;
+    /* display:none; */
+}
+.modalContext img{
+    width: 25px;
+}
+.close{
+    position: relative;
+    top: 5px;
+    right: -298px ;
+    width:100px;
+    height:50px;
+}
+.mr-tp5{
+    margin-top:5px;
+  }
+.mr-tp10{
+  margin-top:10px;
+}
+.bold{
+    font-weight: 600;
+  }
+.underline{
+    text-decoration: underline;
+}
