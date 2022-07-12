@@ -1,0 +1,181 @@
+/*
+@font-face {
+    src: url(https://legal.polestar.com/shared-assets/fonts/polestar-unica/light.woff2) format('woff2'), url(https://legal.polestar.com/shared-assets/fonts/polestar-unica/light.woff) format('woff');
+    font-family: Polestar Unica;
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    src: url(https://legal.polestar.com/shared-assets/fonts/polestar-unica/regular.woff2) format('woff2'), url(https://legal.polestar.com/shared-assets/fonts/polestar-unica/regular.woff) format('woff');
+    font-family: Polestar Unica;
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    src: url(https://legal.polestar.com/shared-assets/fonts/polestar-unica/bold.woff2) format('woff2'), url(https://legal.polestar.com/shared-assets/fonts/polestar-unica/bold.woff) format('woff');
+    font-family: Polestar Unica;
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+*/
+html body {
+    background: #FFFFFF;
+    font-family: PingFang SC,"Source Han Sans CN",Microsoft YaHei,Arial;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    padding: 0;
+    margin: 0;
+}
+
+.body-content {
+    width: 100%;
+    color: #101820;
+    padding: 48px 0 20px 0;
+    color: rgba(16, 24, 32, 0.8);
+}
+
+.go-back {
+    padding-left: 24px;
+}
+
+    .go-back img {
+        width: 12px;
+        height: 12px;
+        cursor: pointer;
+    }
+
+.content {
+    padding: 10px 24px 0 24px;
+    font-size: 16px;
+}
+
+.title {
+    padding: 40px 24px 10px 24px;
+    font-size: 24px;
+    color: #101820;
+}
+
+.sub-title {
+    font-size: 20px;
+    color: #101820;
+}
+
+.dark-color {
+    color: #101820;
+}
+
+.bolder {
+    font-weight: bold;
+    font-weight: 600;
+    color: #101820;
+    color: rgba(16, 24, 32, 0.8);
+}
+
+.weight {
+    font-weight: bold;
+    font-weight: 600;
+    color: #101820;
+    color: rgba(16, 24, 32, 0.8);
+}
+
+.content a:link {
+    color: #ff7500;
+}
+
+.content a:hover {
+    color: #ff7500;
+}
+
+.content a:visited {
+    color: #ff7500;
+}
+
+.content a:active {
+    color: #ff7500;
+}
+
+.content a {
+    text-decoration: none;
+}
+
+.content p {
+    line-height: 24px;
+    margin: 10px 0;
+}
+
+
+
+.content ul {
+    margin: 0;
+    padding: 15px 0 15px 23px;
+}
+
+    .content ul.pt0 {
+        padding-top: 0;
+    }
+
+    .content ul.pb0 {
+        padding-bottom: 0;
+    }
+
+    .content ul li {
+        margin: 0;
+        padding: 1px 0;
+    }
+
+
+.sec-p {
+    font-weight: bold;
+    color: #40464d;
+}
+
+.mr-10 {
+    margin-top: 10px;
+}
+
+.pts {
+    padding-top: 15px;
+}
+
+.ptp {
+    padding-top: 10px;
+}
+
+.content a.full-link {
+    text-decoration: underline;
+    word-break: break-word;
+    color: rgba(16, 24, 32, 0.8);
+}
+
+    .content a.full-link:hover {
+        color: #ff7500;
+    }
+
+
+
+.content a {
+    text-decoration: none;
+}
+
+.line {
+    height: 1px;
+    background: #101820;
+    opacity: .15;
+    margin-top: 5px;
+    margin-bottom: 14px;
+}
+
+.date {
+    text-decoration: underline;
+    margin-bottom: 8px;
+}
+
+.indent-1 {
+    text-indent: 1em;
+}
