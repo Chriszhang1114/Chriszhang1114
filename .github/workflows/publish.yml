@@ -1,6 +1,6 @@
 name: "public static resource to s3"
 on:
-    push:
+  push:
     branches:
       - master
       - stg
@@ -14,10 +14,10 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    outputs:
+    outputs: 
       stage: ${{ steps.step1.outputs.stage }}
 
-    setps:
+    steps:
       - name: Set enviromental variables based on branch
         id: step1
         run: |
@@ -35,7 +35,7 @@ jobs:
           fi
       - name: Checkout code
         uses: actions/chenckout@v3
-
+  
       - name: Configure AWS Credentialls
         uses: aws-actions/configure-aws-credentials@master
         with:
@@ -43,7 +43,7 @@ jobs:
           role-session-name: aws-session
           aws-region: ${{ env.AWS_REGION }}
           audience: ${{ env.AWS_AUDIENCE }}
-
+  
       - name: Sync S3
         run: |
-            aws s3 sync chauffeur-policy s3://devopschris/resource/chauffeur-policy --acl public-read
+          aws s3 sync chauffeur-policy s3://devopschris/resource/chauffeur-policy --acl public-read
