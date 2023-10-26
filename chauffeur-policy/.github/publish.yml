@@ -1,0 +1,49 @@
+name: "public static resource to s3"
+on:
+    push:
+    branches:
+      - master
+      - stg
+      - dev
+env:
+  AWS_REGION: cn-northwest-1 
+  AWS_AUDIENCE: sts.cn-northwest-1.amazonaws.com.cn
+  BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    outputs:
+      stage: ${{ steps.step1.outputs.stage }}
+
+    setps:
+      - name: Set enviromental variables based on branch
+        id: step1
+        run: |
+          if [[ $GITHUB_REF == 'refs/heads/master' ]]; then
+              echo "AWS_ROLE=${{ secrets.AWS_GITHUB_REPO_ACCESS_ROLE_ARN_PROD }}" >> "$GITHUB_ENV"
+              echo "stage=prod" >> $GITHUB_OUTPUT
+          elif [[ $GITHUB_REF == 'refs/heads/stg' ]]; then
+              echo "AWS_ROLE=${{ secrets.AWS_GITHUB_REPO_ACCESS_ROLE_ARN_STG }}" >> "$GITHUB_ENV"
+              echo "stage=stg" >> $GITHUB_OUTPUT
+          elif [[ $GITHUB_REF == 'refs/heads/dev' ]]||[[ $GITHUB_REF == 'refs/heads/eks' ]]; then
+              echo "AWS_ROLE=${{ secrets.AWS_GITHUB_REPO_ACCESS_ROLE_ARN_DEV }}" >> "$GITHUB_ENV"
+              echo "stage=dev" >> $GITHUB_OUTPUT
+          else
+              echo "not supported yet"
+          fi
+      - name: Checkout code
+        uses: actions/chenckout@v3
+
+      - name: Configure AWS Credentialls
+        uses: aws-actions/configure-aws-credentials@master
+        with:
+          role-to-assume: ${{env.AWS_ROLE}}
+          role-session-name: aws-session
+          aws-region: ${{ env.AWS_REGION }}
+          audience: ${{ env.AWS_AUDIENCE }}
+
+      - name: Sync S3
+        run: |
+            aws s3 sync chauffeur-policy s3://devopschris/resource/chauffeur-policy --acl public-read
